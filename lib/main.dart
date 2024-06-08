@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -81,6 +82,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          String url = 'https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?';
+          String finalUrl = url + 'x=' + lng.toString() + '&y=' + lat.toString();
+          print(finalUrl);
+          Map<String, String> reqHeader = {
+            'Authorization': 'Authorization: KakaoAK 933d2df92a5af1c1024efdf32b3f268a'
+          };
+          print(reqHeader);
+
+          var response = await http.get(Uri.parse(finalUrl),
+              headers: {"Authorization": "KakaoAK 933d2df92a5af1c1024efdf32b3f268a"});
+          print(response.body);
+        },
+        child: Icon(Icons.abc),
       ),
     );
   }

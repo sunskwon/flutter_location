@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
           String finalUrl = url + 'x=' + lng.toString() + '&y=' + lat.toString();
           print(finalUrl);
           Map<String, String> reqHeader = {
-            'Authorization': 'Authorization: KakaoAK 933d2df92a5af1c1024efdf32b3f268a'
+            'Authorization': 'Authorization: KakaoAK '
           };
           print(reqHeader);
 

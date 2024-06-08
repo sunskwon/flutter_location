@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
           print(reqHeader);
 
           var response = await http.get(Uri.parse(finalUrl),
-              headers: {"Authorization": "KakaoAK 933d2df92a5af1c1024efdf32b3f268a"});
+              headers: {"Authorization": "KakaoAK "});
           print(response.body);
         },
         child: Icon(Icons.abc),
